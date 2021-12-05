@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --background-site: #f3f3f3;
+    --default-color: #292929;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background: var(--background-site);
+}
+
+.main-container {
+    height: inherit;
+    width: inherit;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container h1 {
+    font-size: 32px;
+    color: var(--default-color);
+    text-align: center;
+}
+
+.main-container .content {
+    margin-top: 4rem;
+    max-width: 1200px;
+    padding: 0 25px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    gap: 2.4rem;
+}
+
+.main-container .lab-container h2 {
+    font-size: 22px;
+    color: var(--default-color);
+    cursor: pointer;
+    text-align: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.main-container .lab-container h2:hover {
+    opacity: .8;
+    transition: opacity 300ms ease-in-out;
+}
+
+.main-container .lab-container h2 img {
+    width: 20px;
+    height: 20px;
+    object-fit: cover;
+}
+
+.exercises-dropdown {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    transition: all 300ms ease-in-out;
+}
+
+.exercises-dropdown li {
+    margin-bottom: 10px;
+}
+
+.exercises-dropdown li, a {
+    text-decoration: none;
+    font-size: 18px;
+    color: var(--default-color);
+}
+
+.exercises-dropdown li:hover {
+    opacity: .8;
+    transition: opacity 300ms ease-in-out;
+}
+
+.hide {
+    height: 0;
+    max-height: 0;
+    overflow: hidden;
+}
+
+.show {
+    height: auto;
+    max-height: 9999px;
+}
