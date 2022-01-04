@@ -211,11 +211,12 @@
 }
 
 .footer .content {
-    flex-wrap: wrap;    
+    /* flex-wrap: wrap; */    
 }
 
 .footer .content .first-column, .second-column, .thirtd-column {
     width: calc(1150px/3);
+    margin-right: 10px;
 }
 
 .footer .content ul {
