@@ -1,28 +1,25 @@
-const result = document.querySelector('.result');
-const btn = document.querySelector('.show-fulltext');
-const datetime = document.querySelector('#datetime');
+const data1 = document.querySelector('#data1');
+const data2 = document.querySelector('#data2');
+const btn = document.querySelector('.calcular');
+const showResult = document.querySelector('.result');
 
-const returnsFullText = (month) => {
-    const moths = {
-        '01': 'de janeiro',
-        '02': 'de fevereiro',
-        '03': 'de março',
-        '04': 'de abril',
-        '05': 'de maio',
-        '06': 'de junho',
-        '07': 'de julho',
-        '08': 'de agosto',
-        '09': 'de setembro',
-        '10': 'de outubro',
-        '11': 'de novembro',
-        '12': 'de dezembro',
-    };
+const calculateWeeks = () => {
+    const d1 = new Date(data1.value);
+    const d2 = new Date(data2.value);    
+    let val = 0;
 
-    return moths[month];
+    if( d1 > d2 ) {
+        val = d1 - d2;
+    } else {
+        val = d2 - d1; 
+    }
+
+    const result = Math.floor((((new Date(val).getTime()/1000)/60)/60)/168);
+    return result;
 }
 
 btn.addEventListener('click', () => {
-    const date = datetime.value;
-    const splitedDate = date.split('-').reverse();
-    result.textContent = `${splitedDate[0]} ${returnsFullText(splitedDate[1])} de ${splitedDate[2]}`;
+    showResult.innerText = `Numero de semanas passadas: ${calculateWeeks()}`
 }, false);
+
+
