@@ -1,0 +1,18 @@
+/* variables, resets and vendors */
+@import url(./utils/variables.css);
+@import url(./base/reset.css);
+@import url(./vendors/font-awesome.min.css);
+@import url(./utils/util-classes.css);
+
+/* layout components */
+@import url(./layout/header.css);
+@import url(./layout/footer.css);
+@import url(./components/mobile-menu.css);
+
+/* components */
+@import url(./components/news.css);
+@import url(./components/products.css);
+@import url(./components/staff.css);
+
+/* home */
+@import url(./pages/home.css);

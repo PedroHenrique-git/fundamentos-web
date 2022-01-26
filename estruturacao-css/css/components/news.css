@@ -1,0 +1,46 @@
+.news div {
+    padding:0 40px;
+    border-right: 1px solid #ddd;
+}
+
+.news div:last-child{
+    border-right: none;
+}
+
+.news h3 {
+    color: var(--blue);
+    font-weight: lighter;
+    line-height:1.5em;
+    margin-bottom: 30px;
+}
+
+.news p {
+    color: var(--gray);
+    font-size: 0.9em;
+    font-weight: lighter;
+    line-height:1.5em;
+    margin-bottom: 30px;
+}
+
+.news a, .products a {
+    background-color:var(--blue);
+    font-size: 0.9em;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+@media (max-width: 1199px) {
+    .news {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .news > div {
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        padding: 0 0 40px 0;
+        margin-bottom: 30px;
+        width: 100%;
+    }
+}

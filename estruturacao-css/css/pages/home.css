@@ -1,0 +1,9 @@
+.news, .staff, .products {
+    display:flex;
+    flex-direction: row;
+    padding: 80px 50px 100px;
+}
+
+.staff, .products {
+    flex-wrap: wrap;
+}
