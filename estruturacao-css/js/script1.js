@@ -1,4 +1,4 @@
-(async function() {
+(function() {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
 
     const controlFadeInOutMenuMobile = () => {
