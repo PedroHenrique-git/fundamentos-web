@@ -1,0 +1,131 @@
+.film-wrap {
+    border: 1px solid #c1c1c1;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+    gap: 15px;
+    max-height: 450px;
+    margin-bottom: 25px;
+    padding: 15px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.film-wrap {
+    scrollbar-width: auto;
+    scrollbar-color: #464248 #ffffff;
+}
+
+.film-wrap::-webkit-scrollbar {
+    width: 5px;
+}
+
+.film-wrap::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.film-wrap::-webkit-scrollbar-thumb {
+    background-color: #1b1a1b;
+    border-radius: 10px;
+    border: none;
+}
+
+.film-wrap .film-image-wrap {
+    max-width: 240px;
+}
+
+@media (max-width: 280px) {
+    .film-wrap .film-image-wrap {
+        max-width: 140px;
+    }
+}
+
+.film-wrap .film-image-wrap img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.film-wrap h3, p, li {
+    color: var(--var--font-color);
+}
+
+.film-wrap .title {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.film-wrap p:first-of-type {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.film-wrap p .classification {
+    display: block;
+    font-size: 14px;
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.film-wrap p .classification.black {
+    background: #000;
+}
+
+.film-wrap p .classification.green {
+    background: rgb(112, 214, 112);    
+}
+
+.film-wrap p .classification.yellow {
+    background: rgb(221, 221, 136); 
+}
+
+.film-wrap p .classification.orange {
+    background: rgb(226, 193, 132);
+}
+
+.film-wrap p .classification.red {
+    background: rgb(218, 122, 122);
+}
+
+.film-wrap p .classification.blue {
+    background: rgb(124, 174, 231);
+}
+
+.film-wrap .film-infos-wrap ul {
+    padding-bottom: 10px;
+}
+
+.film-wrap .film-infos-wrap ul:first-of-type {
+    padding-top: 10px;
+}
+
+.film-wrap .film-infos-wrap ul li {
+    padding-bottom: 5px;
+}
+
+.film-wrap .film-infos-wrap ul li:first-of-type {
+    padding-bottom: 10px;
+}
+
+.film-wrap .film-opinions li {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.film-wrap .film-opinions li:not(:last-of-type) {
+    border-bottom: 1px solid #c1c1c1;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}

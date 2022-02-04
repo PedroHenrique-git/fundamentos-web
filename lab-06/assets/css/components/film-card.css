@@ -1,0 +1,15 @@
+.films-cards {
+    background: rgba(0, 0, 0, .7);
+    border-radius: 5px;
+    padding: 25px;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    grid-gap: 1.5rem;
+}
+
+@media (max-width: 280px) {
+    .films-cards {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    }
+}

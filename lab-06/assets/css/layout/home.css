@@ -1,0 +1,10 @@
+html, body {
+    background: var(--var--light-red);
+    width: 100%;
+}
+
+.content {
+    margin: 50px auto;
+    padding: 0 25px;
+    max-width: 1440px;    
+}

@@ -1,16 +1,7 @@
-* {
-    margin: 0;
-    font-family: sans-serif;
-    padding: 0;
-}
+@import url(./utils/variables.css);
+@import url(./utils/resets.css);
 
-html, body {
-    background: rgb(151, 104, 104);
-    height: 100%;
-    width: 100%;
-}
+@import url(./layout/home.css);
 
-.content {
-    background: rgba(0, 0, 0, .5);
-    margin: 100px auto;
-}
+@import url(./components/film-card.css);
+@import url(./components/film-wrap.css);
