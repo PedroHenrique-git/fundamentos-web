@@ -22,10 +22,17 @@
         return classificationClasses[classificationNumber];
     }
 
+    const createComponent = (data, fn) => {
+        if( Array.isArray(data) && data.length > 0 )
+            return data.map((d) => fn(d)).join('');
+        else
+            return fn(data); 
+    }
+
     const createFilmCards = async () => {
         const films = await fetchJson('https://rafaelescalfoni.github.io/desenv_web/filmes.json');
 
-        const filmsCardsHtml = films.map((film) => (`
+        const filmsCardsComponent = createComponent(films, (film) => `
             <div class="film-wrap">
                 <h3 class="title">
                     ${film.titulo}
@@ -64,9 +71,9 @@
                     </ul>
                 </div>
             </div>
-        `));
+        `);
 
-        return filmsCardsHtml.join('');
+        return filmsCardsComponent;
     };
 
     const injectFilmsCardsInDOM = async () => {
