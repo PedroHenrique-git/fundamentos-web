@@ -71,7 +71,8 @@
 
     const injectFilmsCardsInDOM = async () => {
         const wrap = document.querySelector('.films-cards');
-        wrap.innerHTML = await createFilmCards();   
+        const htmlFragment = document.createRange().createContextualFragment(await createFilmCards());
+        wrap.append(htmlFragment);  
     };
 
     injectFilmsCardsInDOM();
