@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+    padding: 0;
+}
+
+html, body {
+    background: rgb(151, 104, 104);
+    height: 100%;
+    width: 100%;
+}
+
+.content {
+    background: rgba(0, 0, 0, .5);
+    margin: 100px auto;
+}
