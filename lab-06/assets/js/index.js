@@ -1,13 +1,5 @@
-(() => {
-    const fetchJson = async (url) => {
-        try {
-            const request = await fetch(url);
-            const response = await request.json();
-            return response;
-        }catch(err) {   
-            console.log('Err: ' + err);
-        }
-    };
+$(document).ready(() => {
+    const API_URL = "https://rafaelescalfoni.github.io/desenv_web/filmes.json";
 
     const returnClassOfClassification = (classificationNumber) => {
         const classificationClasses = {
@@ -22,17 +14,18 @@
         return classificationClasses[classificationNumber];
     }
 
-    const createComponent = (data, fn) => {
-        if( Array.isArray(data) && data.length > 0 )
-            return data.map((d) => fn(d)).join('');
-        else
-            return fn(data); 
-    }
+    const generateRatingStars = (rating) => {
+        let finalString = '';
+        for(let i = 1; i <= 5; i++) {
+            finalString += i > rating ? '&#9734;' : '&#9733;';   
+        }
+        return `<span class="stars">${finalString}</span>`;
+    };
 
-    const createFilmCards = async () => {
-        const films = await fetchJson('https://rafaelescalfoni.github.io/desenv_web/filmes.json');
+    const mountHtml = (films) => {
+        const wrap = $('.films-cards');
 
-        const filmsCardsComponent = createComponent(films, (film) => `
+        const htmlString = films.map((film) => (`
             <div class="film-wrap">
                 <h3 class="title">
                     ${film.titulo}
@@ -62,25 +55,20 @@
                         <li>Opiniões: </li>
                         ${film.opinioes.map((opinion) => 
                             `
-                            <li>
-                                <p>Avaliação: ${opinion.rating}</p>
+                            <li class="starts-container">
+                                <p>Avaliação: ${generateRatingStars(opinion.rating)}</p>
                                 <p>${opinion.descricao} </p>
                             </li>
                             `
                         ).join('')}
                     </ul>
                 </div>
-            </div>
-        `);
+            </div>      
+        `)).join('');
 
-        return filmsCardsComponent;
+        wrap.html(htmlString);
     };
 
-    const injectFilmsCardsInDOM = async () => {
-        const wrap = document.querySelector('.films-cards');
-        const htmlFragment = document.createRange().createContextualFragment(await createFilmCards());
-        wrap.append(htmlFragment);  
-    };
 
-    injectFilmsCardsInDOM();
-})();
+    $.get(API_URL).done((films) => mountHtml(films));
+});
